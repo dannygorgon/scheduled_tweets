@@ -2,6 +2,6 @@
 
 <%= form_with model: @user, url: sign_up_path do |form| %>
   <%= form.text_field :email %>
-  <%= form.text_field :password %>
-  <%= form.text_field :password_confirmation %>
+  <%= form.password_field :password %>
+  <%= form.password_field :password_confirmation %>
 <% end %>
