@@ -4,8 +4,12 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    puts "This is working"
-    params
-    render plain: params[:user]
+    @user = User.new(params[:user])
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
