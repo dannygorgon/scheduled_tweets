@@ -5,6 +5,11 @@ class RegistrationsController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    if @user.save
+      redirect_to root_path, notice: "Successfully created account"
+    else
+      render :new
+    end
   end
 
   private
